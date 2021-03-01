@@ -30,7 +30,7 @@ body {
   margin: 0;
   font-family: var(--font-family);
   background-color: var(--background-color);
-  color: var(--text-color)
+  color: var(--text-color);
 }
 
 a {
