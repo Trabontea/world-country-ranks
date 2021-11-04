@@ -1,6 +1,6 @@
 import { StylesProvider } from "@material-ui/core";
 import Layout from "../../components/layout/Layout";
-import Link from "next/Link"
+// import Link from "next/Link"
 import styles from "../../styles/Country.module.css"
 import {format} from '../../utils.js';
 import { useEffect, useState } from "react";
@@ -18,7 +18,6 @@ const Country = ({country}) => {
 
 
   // const [borders, setBorders] = useState([])
-  //
   // const getBorders = async() => {
   //   //cand luam tarile de granita se mai face un request ptr acele tari
   //   const borders = await Promise.all(country[0].borders.map((border)=> getCountry(border)));
@@ -26,7 +25,6 @@ const Country = ({country}) => {
   //   //adaugam in state
   //   setBorders(borders)
   // }
-  //
   // useEffect(() => {
   //   getBorders();
   // }, []);
