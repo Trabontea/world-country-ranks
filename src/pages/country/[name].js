@@ -1,7 +1,7 @@
 import { StylesProvider } from "@material-ui/core";
 import Layout from "../../components/layout/Layout";
 import Link from "next/Link"
-import styles from "./Country.module.css"
+import styles from "../../styles/Country.module.css"
 import {format} from '../../utils.js';
 import { useEffect, useState } from "react";
 
