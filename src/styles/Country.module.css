@@ -1,4 +1,5 @@
 .overview_panel {
+  margin-top: 20px;
   padding: 20px;
   border-radius: 8px;
   box-shadow: var(--box-shadow);
@@ -16,9 +17,27 @@
   font-size: 40px;
 }
 
+.stema {
+  max-width: 300px;
+}
+
+.flx_sp {
+ display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
 .overview_panel img {
   width: 100%;
   max-width: 500px;
+}
+
+.overview_panel .stema {
+  max-width: 300px;
+}
+
+.mt-20 {
+  margin-top: 20px;
 }
 
 .overview_name {
@@ -77,6 +96,10 @@
 
 .details_panel_label {
   color: var(--text-color-secondary);
+}
+
+.details_panel_value {
+  text-transform: capitalize;
 }
 
 .details_panel_borders_cnt {
