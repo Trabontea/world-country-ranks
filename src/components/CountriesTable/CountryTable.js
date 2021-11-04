@@ -59,33 +59,50 @@ const CountryTable = ({countries}) => {
 
   return <div>
     <div className={styles.heading}>
+      <div className={styles.heading_flag}></div>
       <button
           className={styles.heading_name}
           onClick={() => setValueAndDirection('name')}
       >
         <div>Name</div>
-        <SortArrow direction={direction}/>
+        {value === 'name' && <SortArrow direction={direction}/>}
       </button>
 
       <button
           className={styles.heading_population}
           onClick={() => setValueAndDirection('population')}>
         <div>Population</div>
-        <SortArrow direction={direction}/>
+        {value === 'population' && <SortArrow direction={direction}/>}
       </button>
 
       <button
           className={styles.heading_area}
           onClick={() => setValueAndDirection('area')}>
-        <div>Area</div>
-        <SortArrow direction={direction}/>
+        <div>Area <span className={styles.heading_km}>(km<sup style={{fontSize: "0.5rem"}}>2</sup>)</span></div>
+        {value === 'area' && <SortArrow direction={direction}/> }
       </button>
+
+      <button
+          className={styles.heading_gini}
+          onClick={() => setValueAndDirection('gini')}>
+        <div>Gini</div>
+        {value === 'gini' && <SortArrow direction={direction}/>}
+      </button>
+
+     
+
+
+
     </div>
-    {orderedCountries.map((country) => <Link href={`/country/${country.alpha3Code}`} key={country.alpha2Code}>
+    {orderedCountries.map((country) => <Link href={`/country/${country.name.common}`} key={country.cca3}>
         <div className={styles.row} >  
-          <div className={styles.name}>{country.name}</div>
+         <div className={styles.flag}>
+           <img className={styles.flag_img} src={country.flag} alt={country.flag}></img>
+         </div>
+          <div className={styles.name}>{country.name.common}</div>
           <div className={styles.population}>{format(country.population)}</div>
-          <div className={styles.area}>{format(country.area)}</div>
+          <div className={styles.area}>{format(country.area) || 0}</div>
+          {/*<div className={styles.gini}>{country.gini.2015 || 0}%</div>*/}
         </div>
       </Link>
     )}

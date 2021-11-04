@@ -10,9 +10,9 @@ export default function Home({countries}) {
   const [keyword, setKeyword] = useState("")
 
   const filteredCountries = countries.filter((country) =>
-      country.name.toLowerCase().includes(keyword) ||
-      country.region.toLowerCase().includes(keyword) ||
-      country.subregion.toLowerCase().includes(keyword)
+      country.name.common.toLowerCase().includes(keyword) ||
+      country.region.toLowerCase().includes(keyword)
+      // country.subregion.toLowerCase().includes(keyword)
   )
 
   const onInputChange = (e) =>{
@@ -21,21 +21,27 @@ export default function Home({countries}) {
   }
 
   return <Layout>
+    <div className={styles.inputContainer}>
       <div className={styles.counts}> Found {countries.length} Countries </div>
 
-      <SearchInput
-          placeholder="Filter by Name, region or Subregin"
-          onChange = {onInputChange}
-      />
+      <div className={styles.input}>
+        <SearchInput
+            placeholder="Filter by Name, region or Subregin"
+            onChange = {onInputChange}
+        />
+      </div>
+    </div>
+     
 
       <CountryTable countries={filteredCountries} />
+      {/*<CountryTable countries={countries} />*/}
     </Layout>
 
 
 }
 
 export const getStaticProps = async() => {
-  const res = await fetch("https://restcountries.eu/rest/v2/all");
+  const res = await fetch("https://restcountries.com/v3.1/all");
   const countries = await res.json();
   return {
     props : {

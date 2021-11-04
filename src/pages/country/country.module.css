@@ -88,6 +88,7 @@
 .details_panel_borders_country img {
   width: 100%;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .details_panel_borders_country {
@@ -101,4 +102,29 @@
 .details_panel_border_label {
   padding-bottom: 20px;
   color: var(--text-color-secondary);
+}
+
+@media screen and (max-width: 600px) {
+  .overview_head {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .overview_head h1 {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  /* .container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .container_left {
+    grid-column: 1 / span 4;
+  }
+
+  .container_right {
+    grid-column: 5 / span 8;
+  } */
 }
