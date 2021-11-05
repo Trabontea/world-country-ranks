@@ -1,6 +1,5 @@
 import { StylesProvider } from "@material-ui/core";
 import Layout from "../../components/layout/Layout";
-// import Link from "next/Link"
 import styles from "../../styles/Country.module.css"
 import {format} from '../../utils.js';
 import { useEffect, useState } from "react";
@@ -13,9 +12,9 @@ const getCountry = async(name) => {
 }
 
 const Country = ({country}) => {
-  console.log('country', country)
+  // console.log('country', country)
   const translations = Object.entries(country[0].translations);
-  console.log(translations)
+  //console.log(translations)
 
   // const [borders, setBorders] = useState([])
   // const getBorders = async() => {

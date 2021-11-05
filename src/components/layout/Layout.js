@@ -1,7 +1,6 @@
 import styles from "./Layout.module.css";
 import Head from "next/head";
-// import NextLink from 'next/link';
-import Link from 'next/Link'
+import Link from 'next/link'
 import { useEffect, useState } from 'react';
 import { Brightness6Rounded } from "@material-ui/icons";
 
